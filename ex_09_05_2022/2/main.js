@@ -48,3 +48,46 @@ var animate = function() {
 };
 
 animate();
+
+function onKeyDown(event) {
+    var keyCode = event.which;
+    var speed = 0.1;
+
+    console.log('keyCode', keyCode);
+
+    if (keyCode == 87) {
+        cube.position.y += speed;
+        cube1.position.y -= speed;
+    } else if (keyCode == 83) {
+        cube.position.y -= speed;
+        cube1.position.y += speed;
+    } else if (keyCode == 65) {
+        cube.position.x -= speed;
+        cube1.position.y += speed;
+    } else if (keyCode == 68) {
+        cube.position.x += speed;
+        cube1.position.y -= speed;
+    } else if (keyCode == 32) {
+        cube.position.set(0, 0, 0);
+        cube1.position.set(0, 0, 0);
+    }
+
+    if (keyCode == 38) {
+        sphere2.position.y += speed;
+        sphere3.position.y -= speed;
+    } else if (keyCode == 40) {
+        sphere2.position.y -= speed;
+        sphere3.position.y += speed;
+    } else if (keyCode == 37) {
+        sphere2.position.x -= speed;
+        sphere3.position.y += speed;
+    } else if (keyCode == 39) {
+        sphere2.position.x += speed;
+        sphere3.position.y -= speed;
+    } else if (keyCode == 32) {
+        sphere2.position.set(0, 0, 0);
+        sphere3.position.set(0, 0, 0);
+    }
+};
+
+document.addEventListener("keydown", onKeyDown, false);

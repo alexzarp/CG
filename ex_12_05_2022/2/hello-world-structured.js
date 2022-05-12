@@ -27,3 +27,15 @@ var animate = function() {
 };
 
 animate();
+
+function onKeyDown(event) {
+    var keyCode = event.which;
+
+    console.log('keyCode', keyCode);
+
+    if (keyCode == 32) { // espaço 
+        velocity.multiplyScalar(-1);
+    }
+};
+
+document.addEventListener("keydown", onKeyDown, false);

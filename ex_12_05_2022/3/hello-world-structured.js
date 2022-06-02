@@ -32,7 +32,7 @@ wheel.position.x = 1.3;
 wheel.position.z = 0.1;
 
 for (let i = 0; i < 4; i++) {
-
+    
 }
 
 // wheel.rotation.z = 80;

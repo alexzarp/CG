@@ -6,12 +6,12 @@
  */
 
 
-import * as THREE from '../../libs/three.js-r110/build/three.module.js';
-import Stats from '../../libs/three.js-r110/examples/jsm/libs/stats.module.js';
-import { GUI } from '../../libs/three.js-r110/examples/jsm/libs/dat.gui.module.js';
+import * as THREE from '../biblioteca/libs/three.js-r110/build/three.module.js';
+import Stats from '../biblioteca/libs/three.js-r110/examples/jsm/libs/stats.module.js';
+import { GUI } from '../biblioteca/libs/three.js-r110/examples/jsm/libs/dat.gui.module.js';
 
-import { OrbitControls } from '../../libs/three.js-r110/examples/jsm/controls/OrbitControls.js';
-import { MD2Character } from '../../libs/three.js-r110/examples/jsm/misc/MD2Character.js';
+import { OrbitControls } from '../biblioteca/libs/three.js-r110/examples/jsm/controls/OrbitControls.js';
+import { MD2Character } from '../biblioteca/libs/three.js-r110/examples/jsm/misc/MD2Character.js';
 
 var SCREEN_WIDTH = window.innerWidth;
 var SCREEN_HEIGHT = window.innerHeight;
@@ -313,24 +313,3 @@ function render() {
     character.root.rotation.y += 0.02;
     renderer.render(scene, camera);
 }
-
-function onKeyDown(event) {
-    var keyCode = event.which;
-    var speed = 0.1;
-
-    console.log('keyCode', keyCode);
-
-    if (keyCode == 87) {
-        cube.position.y += speed;
-    } else if (keyCode == 83) {
-        cube.position.y -= speed;
-    } else if (keyCode == 65) {
-        cube.position.x -= speed;
-    } else if (keyCode == 68) {
-        cube.position.x += speed;
-    } else if (keyCode == 32) {
-        cube.position.set(0, 0, 0);
-    }
-};
-
-document.addEventListener("keydown", onKeyDown, false);

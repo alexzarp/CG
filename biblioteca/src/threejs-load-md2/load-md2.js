@@ -316,20 +316,18 @@ function render() {
 
 function onKeyDown(event) {
     var keyCode = event.which;
-    var speed = 0.1;
+    var speed = 3;
 
     console.log('keyCode', keyCode);
 
     if (keyCode == 87) {
-        cube.position.y += speed;
+        character.root.position.z -= speed;
     } else if (keyCode == 83) {
-        cube.position.y -= speed;
+        character.root.position.z += speed;
     } else if (keyCode == 65) {
-        cube.position.x -= speed;
+        character.root.position.x -= speed;
     } else if (keyCode == 68) {
-        cube.position.x += speed;
-    } else if (keyCode == 32) {
-        cube.position.set(0, 0, 0);
+        character.root.position.x += speed;
     }
 };
 
